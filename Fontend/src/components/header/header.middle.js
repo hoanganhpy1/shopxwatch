@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import storeConfig from "../../config/storage.config";
 import HeaderBottom from "./header.bottom";
 
 import _ from 'lodash'
+
 class HeaderMiddle extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,7 @@ class HeaderMiddle extends Component {
       });
     }
   }
+
   componentWillReceiveProps(nextProps) {
     if (!nextProps.islogin) {
       this.setState({
@@ -82,47 +84,51 @@ class HeaderMiddle extends Component {
   render() {
     return (
       <div className="header-middle">
-          <div className="row">
-            <div className="col-sm-3">
-              <div className="logo pull-left">
-                <a href="/shop">
-                  <img src="/assets/images/xwatch.png" alt="" />
-                </a>
-              </div>
-
-            </div>
-            <div className="col-sm-6">
-              <div className="shop-menu">
-                <ul className="nav navbar-nav collapse navbar-collapse">
-                  <li className="post-link"> <Link to="/" >Trang Chủ</Link></li>
-                  <li className="post-link"> <Link to="/Shop" >Sản phẩm</Link></li>
-                  <li className="post-link"> <Link to="/post" >Tin tức</Link></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-sm-3">
-              <div className="shop-menu pull-right">
-                <ul className="nav navbar-nav collapse navbar-collapse">
-                  <li className='dropdown'>
-                    <a className='Setting-item'>
-                      <i className="fa fa-user dropbtn"></i>
-                    </a>
-                    {this.hoverlogin()}
-                  </li>
-
-
-                  <li>
-                    <Link to={"/cart"}>
-                      <i className="fa fa-shopping-cart" />
-                    </Link>
-                  </li>
-
-                  {this.handlelogin()}
-                </ul>
-              </div>
-            </div>
+      <nav className="main-nav">
+          <div className="logo">
+            <h2>
+              <span>X</span>watch
+            </h2>
           </div>
+          <div
+          className={"menu-link" }>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/shop">about</Link>
+            </li>
+            <li>
+              <Link to="/post">services</Link>
+            </li>
+            <li>
+              <Link to="/contact">contact</Link>
+            </li>
+          </ul>
         </div>
+            <div className="shop-menu pull-right">
+              <ul className="nav navbar-nav collapse navbar-collapse">
+                <li className='dropdown'>
+                  <a className='Setting-item'>
+                    <i className="fa fa-user dropbtn"></i>
+                  </a>
+                  {this.hoverlogin()}
+                </li>
+
+
+                <li>
+                  <Link to={"/cart"}>
+                    <i className="fa fa-shopping-cart" />
+                  </Link>
+                </li>
+
+                {this.handlelogin()}
+              </ul>
+            </div>
+        </nav>
+
+      </div>
     );
   }
 }
