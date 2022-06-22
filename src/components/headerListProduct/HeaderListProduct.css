@@ -1,0 +1,43 @@
+.text-center{
+    margin-top: 50px;
+}
+.line{
+    width: 1px;
+    color: #000;
+}
+.line-left{
+    background: rgba(0, 0, 0, 0) url("https://template.hasthemes.com/naturecircle/naturecircle/assets/img/icon/line.png") no-repeat scroll left center;
+    content: "";
+    height: 7px;
+    left: 0;
+    position: absolute;
+    top: 53.5%;
+    width: 35%;
+}
+
+.line-right{
+    background: rgba(0, 0, 0, 0) url("https://template.hasthemes.com/naturecircle/naturecircle/assets/img/icon/line.png") no-repeat scroll left center;
+    content: "";
+    height: 7px;
+    right: 0;
+    position: absolute;
+    top: 53.5%;
+    width: 35%;
+}
+
+.title-header-product{
+    color: #202226;
+    font-family: "Oswald", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.title-header-product span{
+    color: #a9a9a9;
+    font-weight: 200;
+    padding-right: 2px;
+    font-size: 38px;
+    font-weight: 700;
+}
+
